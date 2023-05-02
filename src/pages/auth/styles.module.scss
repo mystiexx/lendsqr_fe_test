@@ -4,20 +4,20 @@
   gap: 10px;
   height: 100vh;
   overflow: hidden;
-}
 
-.left {
-  display: block;
-}
+  .left {
+    display: block;
+  }
 
-img:first-child {
-  padding-top: 106px;
-  padding-left: 97px;
-  padding-bottom: 139px;
-}
+  img:first-child {
+    padding-top: 106px;
+    padding-left: 97px;
+    padding-bottom: 139px;
+  }
 
-img {
-  padding-left: 67px;
+  img {
+    padding-left: 67px;
+  }
 }
 
 .right {
@@ -49,52 +49,52 @@ form {
   gap: 24px;
   width: 447px;
   box-sizing: border-box;
-}
 
-input:first-child {
-  border: 2px solid #545f7d26;
-  border-radius: 5px;
-  outline: none;
-  padding: 17.5px 16px 12.5px 16px;
-}
-
-input::placeholder {
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  color: #545f7d;
-  opacity: 0.6;
-}
-
-.password_box {
-  display: flex;
-  flex-direction: row;
-  border: 2px solid #545f7d26;
-  border-radius: 5px;
-  outline: none;
-  padding-left: 16px;
-  padding-right: 19.5px;
-  margin: 0;
-  align-items: center;
-
-  h4 {
-    line-height: 0;
-    font-weight: 600;
-    font-size: 12px;
-    text-align: center;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: #39cdcc;
-    cursor: pointer;
+  input:first-child {
+    border: 2px solid #545f7d26;
+    border-radius: 5px;
+    outline: none;
+    padding: 17.5px 16px 12.5px 16px;
   }
 
-  input {
-    border: none;
-    width: 100%;
-    padding: 0;
-    height: 100%;
-    box-sizing: border-box;
-    height: 40px;
+  input::placeholder {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    color: #545f7d;
+    opacity: 0.6;
+  }
+
+  .password_box {
+    display: flex;
+    flex-direction: row;
+    border: 2px solid #545f7d26;
+    border-radius: 5px;
+    outline: none;
+    padding-left: 16px;
+    padding-right: 19.5px;
+    margin: 0;
+    align-items: center;
+
+    h4 {
+      line-height: 0;
+      font-weight: 600;
+      font-size: 12px;
+      text-align: center;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #39cdcc;
+      cursor: pointer;
+    }
+
+    input {
+      border: none;
+      width: 100%;
+      padding: 0;
+      height: 100%;
+      box-sizing: border-box;
+      height: 40px;
+    }
   }
 }
 
