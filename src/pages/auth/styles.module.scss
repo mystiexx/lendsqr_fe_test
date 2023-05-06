@@ -125,6 +125,7 @@ button {
   cursor: pointer;
 }
 
+// small screen
 @media only screen and (max-width: 768px) {
   .container {
     display: grid;

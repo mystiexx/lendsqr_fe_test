@@ -1,0 +1,80 @@
+.title {
+  font-family: "Work Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  color: #213f7d;
+}
+
+.summary {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 26px;
+}
+
+.card {
+  background: #ffffff;
+  border: 1px solid rgba(33, 63, 125, 0.06);
+  box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+  border-radius: 4px;
+  padding: 20px 30px;
+  margin-top: 40px;
+}
+
+.users_circle {
+  background: #df18ff1a;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  display: grid;
+  place-items: center;
+}
+
+.active_users_circle {
+  background: #5718ff1a;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  display: grid;
+  place-items: center;
+}
+
+.users_loan_circle {
+  background: #f55f441a;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  display: grid;
+  place-items: center;
+}
+
+.users_savings_circle {
+  background: #ff33661a;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  display: grid;
+  place-items: center;
+}
+
+.number {
+  font-family: "Work Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 28px;
+  text-transform: uppercase;
+  color: #213f7d;
+}
+
+.title_text {
+  font-family: "Work Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  text-transform: uppercase;
+  margin-top: 14px;
+  margin-bottom: 12px;
+  color: #545f7d;
+}
