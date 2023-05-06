@@ -47,4 +47,5 @@ export type User = {
   socials: UserSocials;
   education: userEducation;
   id: string;
+  status: string;
 };

@@ -4,15 +4,24 @@
   font-weight: 500;
   font-size: 24px;
   color: #213f7d;
+  margin-bottom: 40px;
 }
 
 .summary {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   gap: 26px;
 }
 
 .card {
+  background: #ffffff;
+  border: 1px solid rgba(33, 63, 125, 0.06);
+  box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+  border-radius: 4px;
+  padding: 20px 30px;
+}
+
+.table_card {
   background: #ffffff;
   border: 1px solid rgba(33, 63, 125, 0.06);
   box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
@@ -77,4 +86,336 @@
   margin-top: 14px;
   margin-bottom: 12px;
   color: #545f7d;
+}
+
+.table_container {
+  overflow: auto;
+}
+
+.table {
+  width: 100%;
+}
+
+.table_head th {
+  font-family: "Work Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 14px;
+  text-transform: uppercase;
+  color: #545f7d;
+}
+
+.th_head {
+  display: flex;
+  gap: 10px;
+  flex-direction: row;
+  align-items: center;
+}
+
+.table_body tr {
+  border: 1px solid red;
+}
+
+.table_body td {
+  font-family: "Work Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  color: #545f7d;
+  padding-top: 23px;
+  padding-bottom: 23px;
+  border-bottom: 1px solid #213f7d1a;
+}
+
+.paginate_box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 200px;
+  margin-top: 20px;
+}
+
+.limit {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: "Work Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  color: #545f7d;
+
+  select {
+    background: rgba(33, 63, 125, 0.1);
+    border-radius: 4px;
+    padding: 7px;
+    color: #213f7d;
+    border: none;
+    font-family: "Work Sans";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    color: #213f7d;
+  }
+}
+
+.menu {
+  position: relative;
+  align-items: center;
+  display: flex;
+  align-content: center;
+}
+
+.show {
+  display: block;
+  position: absolute;
+  top: 100%;
+  margin: 0;
+  right: 0;
+  background: #ffffff;
+  border: 1px solid rgba(84, 95, 125, 0.04);
+  box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+  border-radius: 4px;
+  z-index: 1;
+  width: 180px;
+}
+
+.content {
+  font-family: "Work Sans";
+  font-style: normal;
+  font-weight: 500;
+  padding: 20px 26px;
+  font-size: 14px;
+  line-height: 16px;
+  color: #545f7d;
+  display: flex;
+  flex-direction: column;
+}
+
+.flex {
+  display: flex;
+  gap: 8px;
+  text-decoration: none;
+  color: #545f7d;
+}
+
+.hide {
+  display: none;
+}
+
+// large screen
+@media (min-width: 768px) {
+  .title {
+    font-family: "Work Sans";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    color: #213f7d;
+    margin-bottom: 40px;
+  }
+
+  .summary {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 26px;
+  }
+
+  .card {
+    background: #ffffff;
+    border: 1px solid rgba(33, 63, 125, 0.06);
+    box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+    border-radius: 4px;
+    padding: 20px 30px;
+  }
+
+  .table_card {
+    background: #ffffff;
+    border: 1px solid rgba(33, 63, 125, 0.06);
+    box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+    border-radius: 4px;
+    padding: 20px 30px;
+    margin-top: 40px;
+  }
+
+  .users_circle {
+    background: #df18ff1a;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    display: grid;
+    place-items: center;
+  }
+
+  .active_users_circle {
+    background: #5718ff1a;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    display: grid;
+    place-items: center;
+  }
+
+  .users_loan_circle {
+    background: #f55f441a;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    display: grid;
+    place-items: center;
+  }
+
+  .users_savings_circle {
+    background: #ff33661a;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    display: grid;
+    place-items: center;
+  }
+
+  .number {
+    font-family: "Work Sans";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 28px;
+    text-transform: uppercase;
+    color: #213f7d;
+  }
+
+  .title_text {
+    font-family: "Work Sans";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    text-transform: uppercase;
+    margin-top: 14px;
+    margin-bottom: 12px;
+    color: #545f7d;
+  }
+
+  .filter_icon {
+    cursor: pointer;
+  }
+
+  .table_container {
+    overflow: auto;
+  }
+
+  .table {
+    width: 100%;
+  }
+
+  .table_head th {
+    font-family: "Work Sans";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 14px;
+    text-transform: uppercase;
+    color: #545f7d;
+  }
+
+  .th_head {
+    display: flex;
+    gap: 10px;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .table_body td {
+    font-family: "Work Sans";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    color: #545f7d;
+    padding-top: 23px;
+    padding-bottom: 23px;
+    border-bottom: 1px solid #213f7d1a;
+    border-collapse: collapse;
+    cursor: pointer;
+  }
+
+  .more {
+    cursor: pointer;
+  }
+
+  .paginate_box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 200px;
+    margin-top: 20px;
+  }
+
+  .limit {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: "Work Sans";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    color: #545f7d;
+
+    select {
+      background: rgba(33, 63, 125, 0.1);
+      border-radius: 4px;
+      padding: 7px;
+      color: #213f7d;
+      border: none;
+      font-family: "Work Sans";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      color: #213f7d;
+    }
+  }
+
+  .menu {
+    position: relative;
+    align-items: center;
+    display: flex;
+    align-content: center;
+  }
+
+  .show {
+    display: block;
+    position: absolute;
+    top: 100%;
+    margin: 0;
+    right: 0;
+    background: #ffffff;
+    border: 1px solid rgba(84, 95, 125, 0.04);
+    box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+    border-radius: 4px;
+    z-index: 1;
+    width: 180px;
+  }
+
+  .content {
+    font-family: "Work Sans";
+    font-style: normal;
+    font-weight: 500;
+    padding: 20px 26px;
+    font-size: 14px;
+    line-height: 16px;
+    color: #545f7d;
+    display: flex;
+    flex-direction: column;
+    // gap: 2px;
+  }
+
+  .flex {
+    display: flex;
+    gap: 8px;
+    text-decoration: none;
+    color: #545f7d;
+  }
+
+  .hide {
+    display: none;
+  }
 }

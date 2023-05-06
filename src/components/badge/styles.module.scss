@@ -1,0 +1,51 @@
+.inactive {
+  background: #545f7d1a;
+  border-radius: 100px;
+  font-family: "Work Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  text-align: center;
+  color: #545f7d;
+  padding: 7px;
+  text-transform: capitalize;
+}
+
+.pending {
+  background: #e9b2001a;
+  border-radius: 100px;
+  font-family: "Work Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  text-align: center;
+  color: #e9b200;
+  padding: 7px;
+  text-transform: capitalize;
+}
+
+.blacklisted {
+  background: #e4033b1a;
+  border-radius: 100px;
+  font-family: "Work Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  text-align: center;
+  color: #e4033b;
+  padding: 7px;
+  text-transform: capitalize;
+}
+
+.active {
+  background: #39cd621a;
+  border-radius: 100px;
+  font-family: "Work Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  text-align: center;
+  color: #39cd62;
+  padding: 7px;
+  text-transform: capitalize;
+}
