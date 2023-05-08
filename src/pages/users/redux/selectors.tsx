@@ -2,8 +2,8 @@ import { createSelector } from "@reduxjs/toolkit";
 
 interface UserDataState {
   data: [];
-  loan: [];
-  savings: [];
+  names: [];
+  user: null;
   ui: {
     loading: boolean;
   };
@@ -22,8 +22,9 @@ export const getLoading = createSelector(
   (userData) => userData.ui.loading
 );
 
-export const getLoans = createSelector(userData, (userData) => userData.loan);
-export const getSavings = createSelector(
+export const getOrgNames = createSelector(
   userData,
-  (userData) => userData.savings
+  (userData) => userData.names
 );
+
+export const getUser = createSelector(userData, (userData) => userData.user);

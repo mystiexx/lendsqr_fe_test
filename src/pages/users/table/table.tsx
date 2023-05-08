@@ -8,12 +8,17 @@ import { User } from "../redux/types";
 import moment from "moment";
 import { Link } from "react-router-dom";
 import Badge from "../../../components/badge";
+import Filters from "../components/filters";
+import { FormValues } from "../components/formTypes";
 
 interface TableProps {
   users: User[];
+  orgs: [];
+  status: string[];
+  handleFilter: (data: FormValues) => void;
 }
 
-const Table: React.FC<TableProps> = ({ users }) => {
+const Table: React.FC<TableProps> = ({ users, orgs, status, handleFilter }) => {
   const head = [
     "organization",
     "username",
@@ -24,6 +29,7 @@ const Table: React.FC<TableProps> = ({ users }) => {
     "",
   ];
   const [show, setShow] = useState(-1);
+  const [hide, setHide] = useState<boolean>(false);
 
   const toggleMenu = (index: number): void => {
     setShow(show === index ? -1 : index);
@@ -31,11 +37,18 @@ const Table: React.FC<TableProps> = ({ users }) => {
 
   return (
     <div>
+      <Filters
+        hide={hide}
+        orgs={orgs}
+        status={status}
+        handleFilter={handleFilter}
+      />
+
       <table className={styles.table}>
         <thead className={styles.table_head}>
           <tr>
             {head.map((data, i) => (
-              <th key={i}>
+              <th key={i} colSpan={data === "email" ? 2 : 0}>
                 <div className={styles.th_head}>
                   <> {data} </>
                   <>
@@ -44,6 +57,7 @@ const Table: React.FC<TableProps> = ({ users }) => {
                         src={filter}
                         alt="filter"
                         className={styles.filter_icon}
+                        onClick={() => setHide(!hide)}
                       />
                     )}
                   </>
@@ -57,7 +71,7 @@ const Table: React.FC<TableProps> = ({ users }) => {
             <tr key={data.id}>
               <td>{data.orgName}</td>
               <td>{data.userName}</td>
-              <td>{data.email}</td>
+              <td colSpan={2}>{data.email}</td>
               <td>{data.phoneNumber}</td>
               <td>{moment(data.createdAt).format("MMMM D, YYYY h:mm A")}</td>
               <td>

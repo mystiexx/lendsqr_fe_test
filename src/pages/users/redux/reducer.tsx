@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { User } from "./types";
 
 const initialState = {
@@ -6,8 +6,8 @@ const initialState = {
     loading: false,
   },
   data: [],
-  loan: [],
-  savings: [],
+  names: [],
+  user: {},
 };
 
 export const userReducerSlice = createSlice({
@@ -17,20 +17,7 @@ export const userReducerSlice = createSlice({
     get_users_success: (state, { payload }) => {
       state.ui.loading = false;
       state.data = payload;
-      state.loan = payload.filter((data: User) => {
-        if (data?.education?.loanRepayment) {
-          return {
-            ...data,
-          };
-        }
-      });
-      state.savings = payload.filter((data: User) => {
-        if (data?.accountBalance) {
-          return {
-            ...data,
-          };
-        }
-      });
+      state.names = payload.map((data: User) => data.orgName);
     },
     get_users_error: (state) => {
       state.ui.loading = false;
@@ -38,10 +25,26 @@ export const userReducerSlice = createSlice({
     get_users: (state) => {
       state.ui.loading = true;
     },
+    get_user_success: (state, { payload }: PayloadAction<User>) => {
+      state.ui.loading = false;
+      state.user = payload;
+    },
+    get_user_error: (state) => {
+      state.ui.loading = false;
+    },
+    get_user: (state, { payload }: PayloadAction<string>) => {
+      state.ui.loading = true;
+    },
   },
 });
 
-export const { get_users_success, get_users_error, get_users } =
-  userReducerSlice.actions;
+export const {
+  get_users_success,
+  get_users_error,
+  get_users,
+  get_user_success,
+  get_user_error,
+  get_user,
+} = userReducerSlice.actions;
 
 export default userReducerSlice.reducer;
