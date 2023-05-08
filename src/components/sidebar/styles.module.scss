@@ -1,8 +1,9 @@
 .sidebar {
-  width: 283px;
+  width: 293px;
   background: #fff;
   height: 100vh;
   overflow-y: scroll;
+  overflow-x: hidden;
   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.04);
   padding-top: 39px;
   display: block;
@@ -34,15 +35,17 @@
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
-    line-height: 0;
+    // line-height: 0;
     color: #213f7d;
+    white-space: nowrap;
   }
 
   .flex_content {
     display: flex;
     // width: auto;
     align-items: center;
-    gap: 10px;
+    gap: 5px;
+    margin-right: 48px;
   }
 }
 
@@ -81,7 +84,6 @@
 }
 
 // small screen
-
 @media only screen and (max-width: 768px) {
   .sidebar {
     display: none;

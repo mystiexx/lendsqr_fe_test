@@ -6,6 +6,7 @@ import search from "../../assets/navbar/search.svg";
 import styles from "./styles.module.scss";
 import { HiOutlineMenuAlt2 } from "react-icons/hi";
 import Mobile from "../sidebar/mobile";
+import { FaCaretDown } from "react-icons/fa";
 
 const Navbar = () => {
   const [show, setShow] = useState<boolean>(false);
@@ -32,6 +33,7 @@ const Navbar = () => {
           <img src={notify} alt="notification" />
           <img src={avatar} alt="avatar" />
           <h6>Adedeji</h6>
+          <FaCaretDown color={"#213F7D"} />
         </div>
       </div>
     </nav>

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styles from "./styles.module.scss";
 import logo from "../../assets/login/logo.svg";
 import pablo from "../../assets/login/pablo.svg";
+import { useNavigate } from "react-router-dom";
 
 interface FormValues {
   [key: string]: string;
@@ -10,6 +11,7 @@ interface FormValues {
 const Login: React.FC = () => {
   const [show, setShow] = useState(false);
   const [values, setValues] = useState<FormValues>({});
+  const navigate = useNavigate();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value, name } = e.target;
@@ -19,6 +21,10 @@ const Login: React.FC = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log(values);
+    localStorage.setItem("dummy", JSON.stringify(values));
+    setTimeout(() => {
+      navigate("/users");
+    }, 1500);
   };
   return (
     <div className={styles.container}>

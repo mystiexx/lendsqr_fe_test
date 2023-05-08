@@ -1,16 +1,17 @@
-import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Login from "./pages/auth/login";
-import Users from "./pages/users";
-import User from "./pages/user";
+import React, { lazy, Suspense } from "react";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import Loader from "./components/loader";
+
+const Login = lazy(() => import("./pages/auth/login"));
+const Users = lazy(() => import("./pages/users"));
+const User = lazy(() => import("./pages/user"));
 
 const App: React.FC = () => {
   return (
-    <div>
+    <Suspense fallback={<Loader />}>
       <BrowserRouter>
         <Routes>
           <Route
-            // exact
             path="/"
             element={
               <>
@@ -20,9 +21,10 @@ const App: React.FC = () => {
           />
           <Route path="/users" element={<Users />} />
           <Route path="/users/:id" element={<User />} />
+          <Route path="/" element={<Navigate to="/user" replace />} />
         </Routes>
       </BrowserRouter>
-    </div>
+    </Suspense>
   );
 };
 
