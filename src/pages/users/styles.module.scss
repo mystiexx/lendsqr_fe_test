@@ -8,8 +8,10 @@
 }
 
 .summary {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
   gap: 26px;
 }
 
@@ -19,6 +21,8 @@
   box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
   border-radius: 4px;
   padding: 20px 30px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .table_card {
@@ -131,9 +135,9 @@
 .paginate_box {
   display: flex;
   justify-content: space-between;
-  align-items: center;
   padding-bottom: 200px;
   margin-top: 20px;
+  flex-direction: column;
 }
 
 .limit {
@@ -204,8 +208,89 @@
   display: none;
 }
 
+.filter_menu {
+  display: block;
+  position: absolute;
+  top: 100%;
+  margin: 0;
+  margin-top: 30px;
+  background: #ffffff;
+  border: 1px solid rgba(84, 95, 125, 0.14);
+  box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+  border-radius: 4px;
+  z-index: 1;
+  width: 270px;
+  box-sizing: border-box;
+}
+
+.filter_content {
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  width: 270px;
+  box-sizing: border-box;
+
+  label {
+    font-family: "Work Sans";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    color: #545f7d;
+    text-transform: capitalize;
+    margin-bottom: 6px;
+  }
+
+  input {
+    background: #ffffff;
+    border: 1px solid #213f7d1a;
+    border-radius: 8px;
+    height: 40px;
+    padding: 12px 20px;
+    margin-bottom: 20px;
+    font-family: "Work Sans";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  select {
+    width: 100%;
+    box-sizing: border-box;
+    background: #ffffff;
+    border: 1px solid #213f7d1a;
+    border-radius: 8px;
+    height: 40px;
+    padding: 12px 20px;
+    margin-bottom: 20px;
+    font-family: "Work Sans";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    text-transform: capitalize;
+  }
+
+  .btn_container {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+
+    .reset {
+      border: 1px solid #545f7d;
+      background-color: #fff;
+      color: #545f7d;
+      text-transform: capitalize;
+    }
+
+    button {
+      text-transform: capitalize;
+    }
+  }
+}
+
 // large screen
-@media (min-width: 768px) {
+@media only screen and (min-width: 769px) {
   .title {
     font-family: "Work Sans";
     font-style: normal;
@@ -216,9 +301,11 @@
   }
 
   .summary {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 26px;
+    display: flex;
+    flex-wrap: wrap;
+    // flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
   }
 
   .card {
@@ -227,6 +314,8 @@
     box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
     border-radius: 4px;
     padding: 20px 30px;
+    width: 23%;
+    box-sizing: border-box;
   }
 
   .table_card {
@@ -333,6 +422,7 @@
     color: #545f7d;
     padding-top: 23px;
     padding-bottom: 23px;
+    gap: 35px;
     border-bottom: 1px solid #213f7d1a;
     border-collapse: collapse;
     cursor: pointer;
@@ -346,8 +436,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-direction: row;
     padding-bottom: 200px;
     margin-top: 20px;
+    // flex-direction: column;
   }
 
   .limit {
@@ -417,5 +509,86 @@
 
   .hide {
     display: none;
+  }
+
+  .filter_menu {
+    display: block;
+    position: absolute;
+    top: 100%;
+    margin: 0;
+    margin-top: 30px;
+    background: #ffffff;
+    border: 1px solid rgba(84, 95, 125, 0.14);
+    box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+    border-radius: 4px;
+    z-index: 1;
+    width: 270px;
+    box-sizing: border-box;
+  }
+
+  .filter_content {
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    width: 270px;
+    box-sizing: border-box;
+
+    label {
+      font-family: "Work Sans";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      color: #545f7d;
+      text-transform: capitalize;
+      margin-bottom: 6px;
+    }
+
+    input {
+      background: #ffffff;
+      border: 1px solid #213f7d1a;
+      border-radius: 8px;
+      height: 40px;
+      padding: 12px 20px;
+      margin-bottom: 20px;
+      font-family: "Work Sans";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    select {
+      width: 100%;
+      box-sizing: border-box;
+      background: #ffffff;
+      border: 1px solid #213f7d1a;
+      border-radius: 8px;
+      height: 40px;
+      padding: 12px 20px;
+      margin-bottom: 20px;
+      font-family: "Work Sans";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      text-transform: capitalize;
+    }
+
+    .btn_container {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+
+      .reset {
+        border: 1px solid #545f7d;
+        background-color: #fff;
+        color: #545f7d;
+        text-transform: capitalize;
+      }
+
+      button {
+        text-transform: capitalize;
+      }
+    }
   }
 }
